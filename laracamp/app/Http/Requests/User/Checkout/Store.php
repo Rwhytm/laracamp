@@ -26,7 +26,7 @@ class Store extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email|unique:users,email,' . Auth::id() . ',id',
+            'email' => 'required|email',
         ];
     }
 }
