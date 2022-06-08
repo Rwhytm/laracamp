@@ -33,11 +33,17 @@
                             @csrf
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Full Name</label>
-                                <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                @if ($errors->has('name'))
+                                <p class="text-danger">{{ $errors->first('name') }}</p>
+                                @endif
                             </div>
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input name="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                @if ($errors->has('email'))
+                                <p class="text-danger">{{ $errors->first('email') }}</p>
+                                @endif
                             </div>
                             {{-- <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Occupation</label>
